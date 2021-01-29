@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Frontend.Views.SettingsView">
+    <ContentPage.Content>
+        <Grid BackgroundColor="Beige">
+            <Image Source="settings.png" Aspect="AspectFill" Opacity="1" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
+            <StackLayout Margin="15">
+            <Button x:Name="deleteAccount" Clicked="DeleteAccount_OnClicked" Text="Delete Account" CornerRadius="30" 
+                    BackgroundColor="Red" TextColor="White" HorizontalOptions="Center"></Button>
+        </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

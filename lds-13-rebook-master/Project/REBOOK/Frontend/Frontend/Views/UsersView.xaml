@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Frontend.Views.UsersView" BackgroundImage="wood.jpg">
+    <ContentPage.Content>
+        <StackLayout Padding="10">
+                <ListView x:Name="ViewMatchlist"  HasUnevenRows="true" ItemSelected="OnListViewItemSelected">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid Padding="10" BackgroundColor="Beige" Margin="20,0,20,0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition />
+                                    </Grid.ColumnDefinitions>
+                                    
+                                    
+                                    <Image Grid.Row="1" Grid.RowSpan="3"
+                                           Source="user.png"
+                                           Aspect="AspectFit"
+                                           HeightRequest="100"
+                                           WidthRequest="80" />
+                                    <Label Grid.Row="1" Grid.Column="1"
+                                           Text="Name:"
+                                           VerticalOptions="End" TextColor="Black"/>
+                                    <Label Grid.Row="1" Grid.Column="2"
+                                           Text="{Binding Name}"
+                                           VerticalOptions="End" TextColor="Black"/>
+                                    <Label Grid.Row="2" Grid.Column="1"
+                                           Text="UserID:"
+                                           VerticalOptions="End" TextColor="Black"/>
+                                    <Label Grid.Row="2" Grid.Column="2"
+                                           Text="{Binding Id}"
+                                           VerticalOptions="End" TextColor="Black"/>
+                                    <Label Grid.Row="3" Grid.Column="1"
+                                           Text="Email:"
+                                           VerticalOptions="End" TextColor="Black"/>
+                                    <Label Grid.Row="3" Grid.Column="2"
+                                           Text="{Binding Email}"
+                                           VerticalOptions="End" TextColor="Black"/>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

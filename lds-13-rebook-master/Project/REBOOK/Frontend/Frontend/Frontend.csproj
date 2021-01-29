@@ -1,0 +1,38 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+        <DebugType>pdbonly</DebugType>
+        <DebugSymbols>true</DebugSymbols>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Forms.Controls.SwipeCards" Version="0.4.3-pre" />
+        <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="5.0.2" />
+        <PackageReference Include="Microsoft.AspNetCore.SignalR.Common" Version="5.0.2" />
+        <PackageReference Include="Microsoft.Net.Http" Version="2.2.29" />
+        <PackageReference Include="MvvmCross" Version="7.1.2" />
+        <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+        <PackageReference Include="Plugin.Permissions" Version="6.0.1" />
+        <PackageReference Include="Refractored.MvvmHelpers" Version="1.6.2" />
+        <PackageReference Include="sqlite-net-pcl" Version="1.7.335" />
+        <PackageReference Include="Xam.Plugin.ExternalMaps" Version="4.0.1" />
+        <PackageReference Include="Xam.Plugin.Geolocator" Version="4.6.2-beta" />
+        <PackageReference Include="Xam.Plugin.Media" Version="5.0.1" />
+        <PackageReference Include="Xamarin.Forms" Version="4.4.0.991640" />
+        <PackageReference Include="Xamarin.Plugin.Calendar" Version="1.2.2936" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Update="Views\LoginPageView.cs">
+        <DependentUpon>LoginPageView.xaml</DependentUpon>
+      </Compile>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Reference Include="Mono.Android" />
+    </ItemGroup>
+</Project>

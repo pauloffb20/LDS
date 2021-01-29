@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Frontend.Views.ReportByIDView">
+    <ContentPage.Content>
+     <Grid>
+            <Image Source="mybooks.jpg" Aspect="AspectFill" Opacity="1" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
+            
+            <StackLayout Padding="10, 20, 10, 20">
+                
+                <StackLayout Orientation="Horizontal">
+                    <SearchBar x:Name="IDUser" Placeholder="User ID" BackgroundColor="White" HorizontalOptions="Center"></SearchBar>
+                    <ImageButton x:Name="FindButton" Clicked="FindButton_OnClicked" Source="findicon" HorizontalOptions="End" BackgroundColor="Transparent"
+                             CornerRadius="30" WidthRequest="40" HeightRequest="40" Aspect="AspectFit"></ImageButton>
+                </StackLayout>
+                
+                <ListView x:Name="Viewlist"  HasUnevenRows="true" ItemSelected="OnListViewItemSelected" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                      <ViewCell>
+                          <Grid Padding="10" BackgroundColor="Beige" Margin="10,0,10,0" >
+                              <Grid.RowDefinitions>
+                                  <RowDefinition Height="Auto" />
+                                  <RowDefinition Height="*" />
+                                  <RowDefinition Height="*"/>
+                                  <RowDefinition Height="*"/>
+                              </Grid.RowDefinitions>
+                              <Grid.ColumnDefinitions>
+                                  <ColumnDefinition Width="Auto"/>
+                                  <ColumnDefinition Width="*"/>
+                                  <ColumnDefinition />
+                              </Grid.ColumnDefinitions>
+                              
+                              
+                              <Image Grid.Row="1" Grid.RowSpan="3"
+                                     Source="Report.png"
+                                     Aspect="AspectFit"
+                                     HeightRequest="100"
+                                     WidthRequest="60" />
+                              <Label Grid.Row="1" Grid.Column="1"
+                                     Text="ReporterID: "
+                                     VerticalOptions="End" TextColor="Black"/>
+                              <Label Grid.Row="1" Grid.Column="2"
+                                     Text="{Binding ReporterId}"
+                                     VerticalOptions="End" TextColor="Black"/>
+                              <Label Grid.Row="2" Grid.Column="1"
+                                     Text="ReportedID: "
+                                     VerticalOptions="End" TextColor="Black"/>
+                              <Label Grid.Row="2"
+                                     Grid.Column="2"
+                                     Text="{Binding ReportedId}"
+                                     VerticalOptions="End" TextColor="Black" />
+                              <Label Grid.Row="3" Grid.Column="1"
+                                     Text="Reason: "
+                                     VerticalOptions="End" TextColor="Black"/>
+                              <Label Grid.Row="3"
+                                     Grid.Column="2"
+                                     Text="{Binding Text}"
+                                     VerticalOptions="End" TextColor="Black"/>
+                          </Grid>
+                      </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+                
+            </StackLayout>
+         </Grid>
+    </ContentPage.Content>
+</ContentPage>

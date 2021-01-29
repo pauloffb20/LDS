@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Frontend.Views.ViewProfileView">
+    
+    <ContentPage.Content>
+        <Grid>
+            <Image Source="wood.png" Aspect="AspectFill" Opacity="1" VerticalOptions="FillAndExpand"
+                   HorizontalOptions="FillAndExpand" />
+            
+            <StackLayout Margin="10">
+                
+                <StackLayout>
+                    <Frame Margin="20" HasShadow="False" BorderColor="Brown" BackgroundColor="Beige" 
+                           WidthRequest="150" HeightRequest="150" HorizontalOptions="Center" CornerRadius="20">
+                        <Image x:Name="ImageView" HeightRequest = "150" WidthRequest="150" Aspect="AspectFill" />
+                    </Frame>
+                    
+                    <StackLayout Margin="10" Padding="10" VerticalOptions="Center" BackgroundColor="Beige">
+                        <Label  x:Name="UserName" TextColor="Black" HorizontalOptions="Center" FontAttributes="Bold" />
+                        <Label  x:Name="Email"  TextColor="Black" HorizontalOptions="Center" FontAttributes="Bold" />
+                        <Label  x:Name="Description"  TextColor="Black" HorizontalOptions="Center" FontAttributes="Bold" />
+                    </StackLayout>
+                    
+                    <StackLayout HorizontalOptions="Center" Margin="10" Padding="5">
+                        <Button x:Name="ListButton" Clicked="ListButton_OnClicked" TextColor="White" Text="View Booklist"
+                                HorizontalOptions="Center" FontAttributes="Bold" BackgroundColor="Blue" CornerRadius="30"></Button>
+                        <Button x:Name="DeletePunishButton" Clicked="DeletePunishButton_OnClicked" TextColor="White" Text="Delete user"
+                                HorizontalOptions="Center" FontAttributes="Bold" BackgroundColor="Red" CornerRadius="30"></Button>
+                        <Button x:Name="MapButton" Clicked="MapButton_OnClicked" TextColor="White" Text="Check location"
+                                HorizontalOptions="Center" FontAttributes="Bold" BackgroundColor="Red" CornerRadius="30"></Button>
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

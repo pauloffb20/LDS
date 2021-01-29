@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Frontend.Views.EmailView">
+    <ContentPage.Content>
+        <Grid>
+            <Image Source="support.png" Aspect="AspectFill" Opacity="0.35" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
+        <StackLayout Orientation="Vertical" Spacing="15" Margin="10">
+            
+            <StackLayout>
+                <Image Source="LoginIcon.png" WidthRequest="150" HeightRequest="150"></Image>
+            </StackLayout>
+            <StackLayout Margin="0,20,0,20" Padding="10">
+                <Entry x:Name="ForEntry" Text="rebookg13@gmail.com" TextColor="Black" IsReadOnly="True"></Entry>
+                <Entry x:Name="ReasonEntry" Placeholder="Assunto"></Entry>
+                <Editor x:Name="EditorEntry" Placeholder="Text here" AutoSize="TextChanges"></Editor>
+            </StackLayout>
+            
+            <StackLayout Margin="0,40,0,20" Padding="10">
+            <Button x:Name="SendButton" Clicked="SendButton_OnClicked" Text="Send" 
+                    CornerRadius="30" HorizontalOptions="Center" 
+                    TextColor="White" BackgroundColor="ForestGreen"></Button>
+            </StackLayout>
+            
+        </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Frontend.Views.MenuView">
+    
+    <ContentPage.Content>
+        <Grid>
+            <Image Source="biblio.jpg" Aspect="AspectFill" Opacity="1" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
+            
+            <StackLayout>
+                <StackLayout Orientation="Vertical" VerticalOptions="Center" Margin="10" Spacing="15">
+                    <Frame x:Name="UserPhotoFrame" HorizontalOptions="Center" CornerRadius="30" WidthRequest="50" HeightRequest="50" BackgroundColor="Beige">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                    </Frame.GestureRecognizers>
+                    <Image x:Name="UserPhoto" WidthRequest="50" HeightRequest="50"></Image>
+                    </Frame>
+                    
+                    <Button x:Name="EditProfileButton" Text="Edit Profile" Clicked="EditProfileButton_OnClicked_" HorizontalOptions="Center" BackgroundColor="Beige" WidthRequest="150" HeightRequest="45" CornerRadius="20"></Button>
+                    <Button x:Name="MyBookListButton" Text="My BookList" Clicked="MyBookListButton_OnClicked" HorizontalOptions="Center" BackgroundColor="Beige" WidthRequest="150" HeightRequest="45" CornerRadius="20"></Button>
+                    <Button x:Name="FavoriteListButton" Text="Favorite Books"  Clicked="FavoriteListButton_OnClicked" HorizontalOptions="Center" BackgroundColor="Beige" WidthRequest="150" HeightRequest="45" CornerRadius="20"></Button>
+                    <Button x:Name="FindUserButton" Text="Find User" Clicked="FindUserButton_OnClicked" HorizontalOptions="Center" BackgroundColor="Beige" WidthRequest="150" HeightRequest="45" CornerRadius="20"></Button>
+                    <Button x:Name="SupportButton" Text="Support" Clicked="SupportButton_OnClicked" HorizontalOptions="Center" BackgroundColor="Beige" WidthRequest="150" HeightRequest="45" CornerRadius="20"></Button>
+                    <Button x:Name="SettingsButton" Text="Settings" Clicked="SettingsButton_OnClicked"  HorizontalOptions="Center" BackgroundColor="Beige" WidthRequest="150" HeightRequest="45" CornerRadius="20"></Button>
+                    <ImageButton x:Name="LogoutButton" Source="logout.png" Clicked="LogoutButton_OnClicked" HorizontalOptions="Center" BackgroundColor="Transparent" WidthRequest="50" HeightRequest="50" CornerRadius="30"></ImageButton>
+                </StackLayout>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

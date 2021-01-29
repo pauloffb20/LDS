@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Frontend.Views.MoreInfoBookView">
+    <ContentPage.Content>
+        <Grid>
+            <Image Source="Books.jpg" Aspect="AspectFill" Opacity="1" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
+                
+            <StackLayout Margin="10">
+                <Frame Margin="20" HasShadow="False" BorderColor="Brown" BackgroundColor="Beige" 
+                                  WidthRequest="150" HeightRequest="150" HorizontalOptions="Center" CornerRadius="20">
+                    <Image x:Name="BookViewButton" HeightRequest = "200" WidthRequest="200" Aspect="AspectFill"/>
+                </Frame>
+            </StackLayout>
+                    
+            <StackLayout VerticalOptions="EndAndExpand" BackgroundColor="Beige" Margin="30" Spacing="5">
+                <Label Text="Mais Informação" HorizontalTextAlignment="Center"></Label>    
+                <Label x:Name="Lbl_Title" Text="Title:"></Label>
+                <Label x:Name="Title" HorizontalOptions="Center"/>
+                <Label x:Name="Lbl_Author" Text="Author:"></Label>
+                <Label x:Name="Author" HorizontalOptions="Center"/>
+                <Label x:Name="Lbl_Description" Text="Description:"></Label>
+                <Label x:Name="Description" HorizontalOptions="Center"/>
+                <Label x:Name="Lbl_State" Text="State"></Label>
+                <Label x:Name="State" HorizontalOptions="Center"></Label>
+                <Label x:Name="Lbl_Owner" Text="OwnerId"></Label>
+                <Label x:Name="OwnerId" HorizontalOptions="Center"></Label>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

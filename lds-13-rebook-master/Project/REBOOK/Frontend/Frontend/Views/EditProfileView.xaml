@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Frontend.Views.EditProfileView">
+    <ContentPage.Content>
+
+        <Grid>
+            <Image Source="book.jpg" Aspect="AspectFill" Opacity="1" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
+        
+        <StackLayout Padding="10,10,10,0" Spacing="10">
+            <Frame HeightRequest="150" WidthRequest="120" HorizontalOptions="Center" BackgroundColor="Beige">
+                <Image x:Name="ImageView" Aspect="AspectFit"/>
+            </Frame>
+            
+            <Button x:Name="SelectImageButton" HorizontalOptions="Center" Text="Select Image" 
+                    Clicked="SelectImage_OnClicked" CornerRadius="30" 
+                    TextColor="white" BackgroundColor="Blue" HeightRequest="50" WidthRequest="100"/>
+            
+            <StackLayout BackgroundColor="Beige" Padding="10">
+                <Entry x:Name="nameCell" Placeholder="Name: " />
+                <Entry x:Name="emailCell" Placeholder="Email: "/>
+                <Entry x:Name="passwordCell" Placeholder="Password: "/>
+            </StackLayout>
+            
+            <StackLayout Padding="10" VerticalOptions="End">
+                <Button x:Name="SaveButton" Text="Save" TextColor="White" 
+                        Clicked="SaveButton_OnClicked" HorizontalOptions="Center"
+                        BackgroundColor="LimeGreen" HeightRequest="50" WidthRequest="100"
+                        CornerRadius="30" Padding="10">
+                </Button>
+            </StackLayout>
+        </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

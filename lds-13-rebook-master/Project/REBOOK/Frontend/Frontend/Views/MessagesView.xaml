@@ -1,0 +1,48 @@
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Frontend.Views.MessagesView" BackgroundImage="match.jpg">
+    <ContentPage.Content>
+       <StackLayout Spacing="10">
+            <StackLayout Padding="10" Orientation="Horizontal">
+                <ImageButton x:Name="agenda" Source="calendar_icon.png" Clicked="agenda_OnClicked" CornerRadius="30" 
+                        BackgroundColor="Transparent" HorizontalOptions="EndAndExpand"></ImageButton>
+            </StackLayout>
+            
+            <StackLayout Padding="10">
+                <ListView x:Name="ViewMatchlist"  HasUnevenRows="true" ItemTapped="lvItemTapped">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid Padding="10" BackgroundColor="Beige" Margin="20,0,20,0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                              
+                                    <Image Grid.RowSpan="2"
+                                           x:Name="Image"
+                                           Aspect="AspectFill"
+                                           HeightRequest="60"
+                                           WidthRequest="60" />
+                                    <Label Grid.Row="0" Grid.Column="1"
+                                           Text="{Binding userName}"
+                                           VerticalOptions="End" TextColor="Black"/>
+                                    <Label Grid.Row="1" Grid.Column="1"
+                                           Text="{Binding lastMessage}"
+                                           VerticalOptions="End" TextColor="Black"/>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+       </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

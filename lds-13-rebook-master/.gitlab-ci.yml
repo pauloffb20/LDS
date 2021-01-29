@@ -1,0 +1,22 @@
+image: microsoft/dotnet:latest
+
+stages:
+  - build
+  - test
+
+before_script:
+  - dotnet restore
+
+build-dotnet: 
+  stage: build
+  script: 
+    - echo Stage - Build started
+    - cd ./Project/REBOOK
+    - dotnet build
+
+test-dotnet: 
+  stage: test
+  script: 
+    - echo Stage - Test started
+    - cd ./Project/REBOOK
+    - dotnet test

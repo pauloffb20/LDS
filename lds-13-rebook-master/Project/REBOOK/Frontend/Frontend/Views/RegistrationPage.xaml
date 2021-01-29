@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Frontend.Views.RegistrationPage" BackgroundImageSource="bookplume.png">
+    <ContentPage.Content>
+        
+        <StackLayout Spacing="15" Padding="10,20,10,20">
+            
+            <Frame HeightRequest="150" WidthRequest="120" HorizontalOptions="Center" BackgroundColor="Beige">
+                <Image x:Name="ImageView"/>
+            </Frame>
+            
+            <Button x:Name="SelectImageButton" HorizontalOptions="Center" Text="Select"  TextColor="White"
+                    Clicked="SelectImage_OnClicked" CornerRadius="30" BackgroundColor="SaddleBrown"></Button>
+            
+            <StackLayout Padding="15" Spacing="5" VerticalOptions="Center" BackgroundColor="Beige">
+                <Entry Placeholder="UserName" FontSize="16" x:Name="EntryUserName"></Entry>
+                <Entry Placeholder="PassWord" IsPassword="True" FontSize="16" x:Name="EntryUserPassword"></Entry>
+                <Entry Placeholder="Email" FontSize="16" x:Name="EntryUserEmail"></Entry>
+                <Entry Placeholder="User Description" FontSize="16" x:Name="UserDescription"></Entry>
+            </StackLayout>
+            
+            <StackLayout Padding="0,10,0,10" VerticalOptions="EndAndExpand">
+                <Button Text="Register" HorizontalOptions="Center" WidthRequest="100" TextColor="White" 
+                        CornerRadius="30" BackgroundColor="SaddleBrown" Clicked="Register"></Button>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

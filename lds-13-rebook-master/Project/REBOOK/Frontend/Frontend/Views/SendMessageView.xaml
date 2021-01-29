@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Frontend.Views.SendMessageView">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="Beige" Padding="10" Spacing="10">
+            
+            <Label x:Name="NameLabel" WidthRequest="150" HeightRequest="150" TextColor="Black" HorizontalOptions="StartAndExpand"
+                   FontSize="30" ></Label>
+
+            <ListView x:Name="ViewlistMessages" HasUnevenRows="true">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Padding="10" Margin="10,0,10,0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                              
+                                <Label Grid.Row="0" Grid.Column="1"
+                                       Text="{Binding userName}"
+                                       VerticalOptions="End" TextColor="Black">
+                                    <Label.Triggers>
+                                        <DataTrigger TargetType="Label" Binding="{Binding SenderId}" Value="2">
+                                            <Setter Property="TextColor" Value="Red"/>
+                                        </DataTrigger>
+                                        <DataTrigger TargetType="Label" Binding="{Binding SenderId}" Value="3">
+                                            <Setter Property="TextColor" Value="Blue"/>
+                                            <Setter Property="Label.HorizontalOptions">End</Setter>
+                                        </DataTrigger>
+                                        <DataTrigger TargetType="Label" Binding="{Binding SenderId}" Value="4">
+                                            <Setter Property="TextColor" Value="Red"/>
+                                        </DataTrigger>
+                                        <DataTrigger TargetType="Label" Binding="{Binding SenderId}" Value="5">
+                                            <Setter Property="TextColor" Value="Blue"/>
+                                            <Setter Property="Label.HorizontalOptions">End</Setter>
+                                        </DataTrigger>
+                                        <DataTrigger TargetType="Label" Binding="{Binding SenderId}" Value="6">
+                                            <Setter Property="TextColor" Value="Red"/>
+                                        </DataTrigger>
+                                        <DataTrigger TargetType="Label" Binding="{Binding SenderId}" Value="7">
+                                            <Setter Property="TextColor" Value="Blue"/>
+                                            <Setter Property="Label.HorizontalOptions">End</Setter>
+                                        </DataTrigger>
+                                    </Label.Triggers>
+                                </Label>
+                                
+                                <Label Grid.Row="1"
+                                       Grid.Column="1"
+                                       Text="{Binding Text}"
+                                       VerticalOptions="End" TextColor="Black">
+                                    <Label.Triggers>
+                                        <DataTrigger TargetType="Label" Binding="{Binding SenderId}" Value="3">
+                                            <Setter Property="Label.HorizontalOptions">End</Setter>
+                                        </DataTrigger>
+                                        <DataTrigger TargetType="Label" Binding="{Binding SenderId}" Value="5">
+                                            <Setter Property="Label.HorizontalOptions">End</Setter>
+                                        </DataTrigger>
+                                        <DataTrigger TargetType="Label" Binding="{Binding SenderId}" Value="7">
+                                            <Setter Property="Label.HorizontalOptions">End</Setter>
+                                        </DataTrigger>
+                                    </Label.Triggers>
+                                </Label>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+                
+            
+            <StackLayout Orientation="Horizontal" BackgroundColor="Beige">
+                <Editor x:Name="EditorText" Placeholder="Introduza a mensagem" AutoSize="TextChanges" 
+                        HorizontalOptions="StartAndExpand" BackgroundColor="Beige"></Editor>
+                <ImageButton Source="sendMessage.png" Clicked="SendMessageButton" WidthRequest="60" HeightRequest="60" 
+                             CornerRadius="30" Aspect="AspectFit" Padding="10" BackgroundColor="Beige"></ImageButton>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

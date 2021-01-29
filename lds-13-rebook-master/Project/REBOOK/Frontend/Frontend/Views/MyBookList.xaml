@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Frontend.Views.MyBookList">
+    
+    <ContentPage.Content>
+        <Grid>
+            <Image Source="mybooks.jpg" Aspect="AspectFill" Opacity="1" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
+            
+            <StackLayout Padding="10, 20, 10, 10">
+                <ListView x:Name="Viewlist"  HasUnevenRows="true" ItemSelected="OnListViewItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                      <ViewCell>
+                          <Grid Padding="10" BackgroundColor="Beige" Margin="10,0,10,0" >
+                              <Grid.RowDefinitions>
+                                  <RowDefinition Height="Auto" />
+                                  <RowDefinition Height="*" />
+                                  <RowDefinition Height="*"/>
+                                  <RowDefinition Height="*"/>
+                              </Grid.RowDefinitions>
+                              <Grid.ColumnDefinitions>
+                                  <ColumnDefinition Width="Auto"/>
+                                  <ColumnDefinition Width="*"/>
+                              </Grid.ColumnDefinitions>
+                              
+                              <Label Grid.Row="0" Grid.Column="1"
+                                     Text="{Binding Name}"
+                                     VerticalOptions="End" TextColor="Black"/>
+                              <Label Grid.Row="1"
+                                     Grid.Column="1"
+                                     Text="{Binding Author}"
+                                     VerticalOptions="End" TextColor="Black" />
+                              <Label Grid.Row="2"
+                                     Grid.Column="1"
+                                     Text="{Binding State}"
+                                     VerticalOptions="End" TextColor="Black"/>
+                              <Label Grid.Row="3"
+                                     Grid.Column="1"
+                                     Text="{Binding Description}"
+                                     VerticalOptions="End" TextColor="Black" />
+                          </Grid>
+                      </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            
+            <StackLayout  Orientation="Horizontal" HorizontalOptions="Center" Padding="10" Spacing="50">
+                <ImageButton x:Name="AddBookButton" Source="Add.png" Clicked="AddBookButton_OnClicked" WidthRequest="60" 
+                             HeightRequest="60" CornerRadius="30" Aspect="AspectFit" BackgroundColor="Transparent" ></ImageButton>
+                <ImageButton x:Name="EditBookButton" Source="Edit.png" Clicked="EditBookButton_OnClicked" WidthRequest="60" 
+                             HeightRequest="60" CornerRadius="30" Aspect="AspectFit" BackgroundColor="Transparent" ></ImageButton>
+                <ImageButton x:Name="DeleteButton" Source="Delete.png" Clicked="DeleteButtom_OnClicked" WidthRequest="60" 
+                             HeightRequest="60" CornerRadius="30" Aspect="AspectFit" BackgroundColor="Transparent" ></ImageButton>
+                <ImageButton x:Name="DeleteAdminButton" Source="Delete.png" Clicked="DeleteAdminButtom_OnClicked" WidthRequest="60" 
+                             HeightRequest="60" CornerRadius="30" Aspect="AspectFit" BackgroundColor="Transparent" ></ImageButton>
+                <ImageButton x:Name="MoreInfo" Source="info.png" Clicked="MoreInfo_OnClicked" WidthRequest="30" 
+                             HeightRequest="30" CornerRadius="30" Aspect="AspectFit" BackgroundColor="Transparent"></ImageButton>
+            </StackLayout>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
+

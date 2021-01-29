@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Frontend.Views.EditBookView">
+    <ContentPage.Content>
+        <Grid>
+            <Image Source="book.jpg" Aspect="AspectFill" Opacity="1" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
+            <StackLayout Padding="10" Spacing="10">
+                
+                <Frame HeightRequest="150" WidthRequest="120" HorizontalOptions="Center" BackgroundColor="Beige">
+                    <Image x:Name="ImageView" Aspect="AspectFit"/>
+                </Frame>
+            
+                <Button x:Name="SelectImageButton" HorizontalOptions="Center" Text="Select Image" 
+                        Clicked="SelectImage_OnClicked" CornerRadius="30" 
+                        TextColor="white" BackgroundColor="Blue" HeightRequest="50" WidthRequest="100"/>
+           
+                <StackLayout BackgroundColor="Beige" Padding="10">
+                    <Entry x:Name="nameCell" Placeholder="Title: "/>
+                    <Entry x:Name="authorCell" Placeholder="Author: "/>
+                    <Entry x:Name="descriptionCell" Placeholder="Description: "/>
+                    <Picker x:Name="pckState" HorizontalOptions="Start" Title="Book State: " 
+                            BackgroundColor="Beige">
+                        <Picker.Items>
+                            <x:String>1</x:String>
+                            <x:String>2</x:String>
+                            <x:String>3</x:String>
+                            <x:String>4</x:String>
+                            <x:String>5</x:String>
+                        </Picker.Items>
+                    </Picker>     
+                </StackLayout>
+                
+                <StackLayout VerticalOptions="End" Padding="10">
+                    <Button x:Name="SaveButton" Text="Save" TextColor="White" 
+                            Clicked="SaveButton_OnClicked" HorizontalOptions="Center"
+                            BackgroundColor="LimeGreen" HeightRequest="50" WidthRequest="100"
+                            CornerRadius="30" Padding="10">
+                    </Button>
+                </StackLayout>
+                
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

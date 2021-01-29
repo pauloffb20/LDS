@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Frontend.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:swipecards="clr-namespace:SwipeCards.Controls;assembly=SwipeCards.Controls"
+    Title="Rebook" NavigationPage.HasBackButton="False" BackgroundImage="wood.jpg">
+
+    <StackLayout>
+        <StackLayout Orientation="Horizontal" Padding="10" Spacing="290">
+            <ImageButton x:Name="MenuButton" Source="bars.png" Clicked="MenuButton_OnClick" WidthRequest="50" HeightRequest="50" Aspect="AspectFit" BackgroundColor="Transparent"></ImageButton>
+            <ImageButton x:Name="MessagesButton" Source="messages.png" Clicked="MessagesButton_OnClicked" WidthRequest="50" HeightRequest="60" Aspect="AspectFit" BackgroundColor="Transparent"></ImageButton>
+        </StackLayout>
+        
+        <swipecards:CardStackView
+        x:Name="CardStackView"
+        HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+        Padding="10">
+        
+        <swipecards:CardStackView.ItemTemplate>
+            <DataTemplate>
+                <AbsoluteLayout>
+                    <StackLayout HeightRequest="300" WidthRequest="400">
+                        <Image Source = "{Binding PhotoPath}" 
+                               Aspect="AspectFit" HeightRequest="300" WidthRequest="400"
+                               HorizontalOptions="Center" VerticalOptions="Center"/>
+                    </StackLayout>
+
+                <Label FontSize="Large" FontAttributes="Bold" TextColor="Black" AbsoluteLayout.LayoutBounds="0.1,0.95" AbsoluteLayout.LayoutFlags="PositionProportional" >
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="{Binding Name}"/>
+                            <Span Text=", "/>
+                            <Span Text="{Binding Author}"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                </AbsoluteLayout>
+            </DataTemplate>
+        </swipecards:CardStackView.ItemTemplate>
+    </swipecards:CardStackView>
+        
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Padding="10" Spacing="50">
+            <ImageButton x:Name="NopeButton" Source="x.png" Clicked="nopeButton_OnClicked"  WidthRequest="60" 
+                         HeightRequest="60" CornerRadius="30" Aspect="AspectFit"
+                         BindingContext="{Binding Id}" BackgroundColor="Transparent"></ImageButton>
+            <ImageButton x:Name="LikeButton" Source="love.png"
+                         Clicked="likeButton_OnClicked"  WidthRequest="60" HeightRequest="60"
+                         CornerRadius="30" Aspect="AspectFit" BackgroundColor="Transparent"
+                         ></ImageButton>
+            <ImageButton x:Name="ReportButton" Source="Report.png" Clicked="ReportButton_OnClicked"
+                         WidthRequest="60" HeightRequest="60"
+                         CornerRadius="30" Aspect="AspectFit" BackgroundColor="Transparent"></ImageButton>
+            <ImageButton x:Name="DeleteButton" Source="Delete.png" Clicked="DeleteButton_OnClicked"
+                         WidthRequest="60" HeightRequest="60"
+                         CornerRadius="30" Aspect="AspectFit" BackgroundColor="Transparent"></ImageButton>
+        </StackLayout>
+    </StackLayout>  
+</ContentPage>
